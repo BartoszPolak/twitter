@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Simple Twitter App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="description" content="Free and simple integration with Twitter 1.1 REST API sample">
+        <meta name="keywords" content="Twitter, REST API, PHP, JavaScript">
+        <meta name="author" content="Bartosz Polak">
+        
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>
+                    <small>
+                        Simple App to get your last 5 Tweets, number of all Tweets, Following, and Followers.
+                    </small>
+                </h1>
+            </div>
+            <div id="search" class="row col-lg-offset-2 col-lg-10">
+                <div class="alert alert-info" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <p>
+                        Please provide Twitter username below to get Tweets, followers and following list.
+                    </p>
+                </div>
+                <form class="form-horizontal" role="form">
+                    <div class="col-lg-offset-3 col-lg-6">
+                        <div class="input-group">
+                            <input type="text" id="twitter-name" class="form-control input-lg loader-background" name="twitter-name" placeholder="Enter Twitter username">
+                            <span class="input-group-btn">
+                                <button class="btn btn-lg btn-primary" type="button" id="go-find-user">
+                                    Go!
+                                </button>
+                            </span>
+                        </div>
+                        <div id="users-list" class="dropdown">
+                            <ul class="dropdown-menu col-lg-12" role="menu">
+                                <li>
+                                    <h4 class="col-sm-12 text-center">
+                                        Please choose your user
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="user" class="row col-lg-12 top-buffer hidden">
+                <div id="selectedUserData" class="col-lg-4 panel panel-default">
+                    <div class="row panel-heading">
+                        <div id="picture" class="col-sm-4 text-center">
+                            <img class="img-rounded" />
+                        </div>
+                        <div id="name" class="col-sm-8">
+                            <h4>
+                                
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="followers" class="col-sm-4 bs-callout bs-callout-info">
+                            <p>followers:</p>
+                            <h4></h4>
+                        </div>
+                        <div id="following" class="col-sm-4 bs-callout bs-callout-info">
+                            <p>following:</p>
+                            <h4></h4>
+                        </div>
+                        <div id="tweets" class="col-sm-4 bs-callout bs-callout-info">
+                            <p>tweets:</p>
+                            <h4></h4>
+                        </div>
+                    </div>
+                    <div class="row panel-footer">
+                        
+                    </div>
+                </div>
+                <div id="selectedUserTweets" class="col-lg-8">
+                    <div id="selectedUserTweets__well" class="well text-center">
+                        <big>Latests tweets</big>
+                    </div>
+                    <div id="selectedUserTweets__tweets" class="row col-sm-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../bootstrap/js/jquery.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../js/twitter.js"></script>
+        
+        <div class="modal fade" id="twitterModalWindow" tabindex="-1" role="dialog" aria-labelledby="twitterModalWindowLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="twitterModalWindowLabel">Twitter sample App</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+/* 
+    Created on : 2014-07-05, 22:18:29
+    Author     : Bartosz Polak
+*/
+
+.top-buffer {
+    margin-top: 40px;
+}
+
+
+/* Side notes for calling out things
+-------------------------------------------------- */
+ 
+/* Base styles (regardless of theme) */
+.bs-callout {
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  padding: 15px 30px 15px 15px;
+}
+.bs-callout-spaced {
+    margin: 0 0 20px 0;
+}
+.bs-callout h4 {
+  margin-top: 0;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+  background-color: #fff;
+}
+ 
+/* Themes for different contexts */
+.bs-callout-danger {
+  border-left-color: #d9534f;
+}
+.bs-callout-warning {
+  border-left-color: #f0ad4e;
+}
+.bs-callout-info {
+  border-left-color: #5bc0de;
+}
