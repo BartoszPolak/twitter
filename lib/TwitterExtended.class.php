@@ -1,4 +1,9 @@
 <?php
+// configs
+require_once $_SERVER['DOCUMENT_ROOT'] . '/finder/twitter/data/twitter_settings.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/finder/twitter/data/twitter_api_links.php';
+
+// parent class
 require_once $_SERVER['DOCUMENT_ROOT'] . '/finder/twitter/lib/TwitterAPIExchange.php';
 
 /**
@@ -21,7 +26,7 @@ class TwitterExtended extends TwitterAPIExchange
             || empty($params['consumer_key'])
             || empty($params['consumer_secret']))
         {
-            throw new TwitterExtendedException('Make sure you are passing in the correct parameters');
+            throw new TwitterExtendedException('123 Make sure you are passing in the correct parameters');
         }
     }
     
@@ -33,13 +38,13 @@ class TwitterExtended extends TwitterAPIExchange
      */
     public function __construct()
     {
-        $TwitterOAuthData = require_once $_SERVER['DOCUMENT_ROOT'] . '/finder/twitter/data/twitter_settings.php';
-        $this->TwitterApiLinks = require_once $_SERVER['DOCUMENT_ROOT'] . '/finder/twitter/data/twitter_api_links.php';
+        global $twitterApiSettings, $TwitterApiLinks;
         
-        $this->checkConfig($TwitterOAuthData);
+        $this->TwitterApiLinks = $TwitterApiLinks;
         
+        $this->checkConfig($twitterApiSettings);
         try {
-            parent::__construct($TwitterOAuthData);
+            parent::__construct($twitterApiSettings);
         } catch (Exception $ex) {
             throw new TwitterExtendedException($ex->getMessage());
         }

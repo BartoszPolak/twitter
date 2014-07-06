@@ -4,7 +4,7 @@
  * Settings to provide OAuth for Twitter API
  */
 
-return array(
+$twitterApiSettings = array(
     'oauth_access_token' => "",
     'oauth_access_token_secret' => "",
     'consumer_key' => "",
